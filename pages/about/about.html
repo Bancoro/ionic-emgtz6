@@ -1,0 +1,47 @@
+  <ion-header>
+    <h1>Ideal Weight Calculator</h1>
+   </ion-header>
+
+<ion-content padding>
+
+
+<br>
+<br>
+
+<ion-list radio-group [(ngModel)]="sex">
+  <h2>Sex: <code>{{sex}}</code></h2>
+
+  <ion-item>
+    <ion-label>Male</ion-label>
+    <ion-radio checked="true" value="Male" color= "light"></ion-radio>
+  </ion-item>
+  <ion-item>
+    <ion-label>Female</ion-label>
+    <ion-radio value="rust" value="Female" color= "light" ></ion-radio>
+  </ion-item>
+</ion-list>
+
+  <h2>Height in feet: <code>{{heightfeet}}</code></h2>
+
+  <ion-item>
+    <ion-range min="5" max="8" step="1" snaps="true" ticks="true" [(ngModel)]="heightfeet" color="dark" pin="true"></ion-range>
+  </ion-item>
+
+  <h2>Height in inches: <code>{{heightinch}}</code></h2>
+
+    <ion-item>
+      <ion-range min="0" max="11" step="1" snaps="true" ticks="true" [(ngModel)]="heightinch" color="dark" pin="true"></ion-range>
+    </ion-item>
+
+<button ion-button (click) = "calculateIW ()">
+  Calculate
+</button>
+
+  <ion-item *ngIf = "sex">
+  <h2><code> {{result1}} </code></h2>
+  <h2><code> {{result2}} </code></h2>
+  <h2><code> {{result3}} </code></h2>
+  <h2><code> {{result4}} </code></h2>
+  </ion-item>
+
+</ion-content>
