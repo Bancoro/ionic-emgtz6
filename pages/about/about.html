@@ -4,22 +4,7 @@
 
 <ion-content padding>
 
-
-<br>
-<br>
-
-<ion-list radio-group [(ngModel)]="sex">
-  <h2>Sex: <code>{{sex}}</code></h2>
-
-  <ion-item>
-    <ion-label>Male</ion-label>
-    <ion-radio checked="true" value="Male" color= "light"></ion-radio>
-  </ion-item>
-  <ion-item>
-    <ion-label>Female</ion-label>
-    <ion-radio value="rust" value="Female" color= "light" ></ion-radio>
-  </ion-item>
-</ion-list>
+  <br>
 
   <h2>Height in feet: <code>{{heightfeet}}</code></h2>
 
@@ -32,16 +17,45 @@
     <ion-item>
       <ion-range min="0" max="11" step="1" snaps="true" ticks="true" [(ngModel)]="heightinch" color="dark" pin="true"></ion-range>
     </ion-item>
+    
+  <br>
+  <ion-grid>
+    <ion-row>
+      <ion-col col-6>
 
-<button ion-button (click) = "calculateIW ()">
-  Calculate
-</button>
+        <ion-list radio-group [(ngModel)]="sex">
+        <h2>Sex: <code>{{sex}}</code></h2>
+        <ion-item>
+        <ion-label>Male</ion-label>
+        <ion-radio checked="true" value="Male" color= "light"></ion-radio>
+        </ion-item>
+        <ion-item>
+        <ion-label>Female</ion-label>
+        <ion-radio value="rust" value="Female" color= "light" ></ion-radio>
+        </ion-item>
+        </ion-list>
 
-  <ion-item *ngIf = "sex">
-  <h2><code> {{result1}} </code></h2>
-  <h2><code> {{result2}} </code></h2>
-  <h2><code> {{result3}} </code></h2>
-  <h2><code> {{result4}} </code></h2>
+      </ion-col>
+      <ion-col>
+        
+        <br>
+        <br>
+        <br>
+        <button ion-button large round outline color= "light" (click) = "calculateIW ()">
+        Calculate 
+        </button>
+
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <h2 *ngIf = "result1"> If you are <code> {{heightfeet}}</code>'<code> {{heightinch}}</code>", and a <code> {{sex}} </code>, then your ideal weights are the following: </h2> 
+
+  <ion-item *ngIf = "result1">
+  <h3>For Robinson's Formula, your ideal weight is <code> {{result1}} </code>kg.</h3>
+  <h3>For Miller's Formula, your ideal weight is <code> {{result2}} </code>kg.</h3>
+  <h3>For Hamwi's Formula, your ideal weight is <code> {{result3}} </code>kg.</h3>
+  <h3>For Robinson's Formula, your ideal weight is <code> {{result4}} </code>kg.</h3>
   </ion-item>
 
 </ion-content>
