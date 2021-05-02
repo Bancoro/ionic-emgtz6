@@ -6,10 +6,16 @@
 
   <br>
 
+  <ion-item>
+  <h4> Note! </h4> 
+  <h3> This program is only accurate for those at least 5 feet tall. </h3>
+  </ion-item>
+
+
   <h2>Height in feet: <code>{{heightfeet}}</code></h2>
 
   <ion-item>
-    <ion-range min="5" max="8" step="1" snaps="true" ticks="true" [(ngModel)]="heightfeet" color="dark" pin="true"></ion-range>
+    <ion-range min="4" max="8" step="1" snaps="true" ticks="true" [(ngModel)]="heightfeet" color="dark" pin="true"></ion-range>
   </ion-item>
 
   <h2>Height in inches: <code>{{heightinch}}</code></h2>
