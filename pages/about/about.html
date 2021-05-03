@@ -6,7 +6,7 @@
 
   <br>
 
-  <ion-item>
+  <ion-item  text-wrap>
   <h4> Note! </h4> 
   <h3> This program is only accurate for those at least 5 feet tall. </h3>
   </ion-item>
@@ -57,7 +57,7 @@
 
   <h2 *ngIf = "result1"> If you are <code> {{heightfeet}}</code>'<code> {{heightinch}}</code>", and a <code> {{sex}} </code>, then your ideal weights are the following: </h2> 
 
-  <ion-item *ngIf = "result1">
+  <ion-item  text-wrap *ngIf = "result1">
   <h3>For Robinson's Formula, your ideal weight is <code> {{result1}} </code>kg.</h3>
   <h3>For Miller's Formula, your ideal weight is <code> {{result2}} </code>kg.</h3>
   <h3>For Hamwi's Formula, your ideal weight is <code> {{result3}} </code>kg.</h3>
